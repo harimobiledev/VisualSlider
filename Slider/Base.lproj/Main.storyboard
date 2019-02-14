@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Slider" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Paint" translatesAutoresizingMaskIntoConstraints="NO" id="gQi-IO-lmF">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R6D-RA-Yxp" customClass="VisualSlider" customModule="Slider" customModuleProvider="target">
+                                <rect key="frame" x="6" y="428" width="401" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="32Y-SR-QV7"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sa-0H-Hzo">
+                                <rect key="frame" x="109.66666666666669" y="783" width="195" height="46"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <state key="normal" title="Increase Alpha">
+                                    <color key="titleColor" red="1" green="0.51704363019999999" blue="0.26829408929999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="incrementButtonActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tmm-yO-HHd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8OZ-BN-bd4">
+                                <rect key="frame" x="104" y="723" width="206" height="46"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <state key="normal" title="Decrease Alpha">
+                                    <color key="titleColor" red="1" green="0.51704363019999999" blue="0.26829408929999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="decrementButtonActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dXA-E2-15d"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gQi-IO-lmF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="0tL-8b-Uvv"/>
+                            <constraint firstItem="R6D-RA-Yxp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="6" id="2q8-r1-TQm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="R6D-RA-Yxp" secondAttribute="trailing" constant="7" id="J9a-iw-3ad"/>
+                            <constraint firstItem="gQi-IO-lmF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JZu-Ed-xGi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gQi-IO-lmF" secondAttribute="trailing" id="O8I-Kg-r6u"/>
+                            <constraint firstItem="R6D-RA-Yxp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Oab-IG-c8Y"/>
+                            <constraint firstItem="8OZ-BN-bd4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZT5-RY-0dG"/>
+                            <constraint firstItem="0sa-0H-Hzo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a9U-IJ-fdp"/>
+                            <constraint firstItem="0sa-0H-Hzo" firstAttribute="top" secondItem="8OZ-BN-bd4" secondAttribute="bottom" constant="14" id="g49-TS-5QI"/>
+                            <constraint firstAttribute="bottom" secondItem="gQi-IO-lmF" secondAttribute="bottom" id="ulM-GR-5wr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0sa-0H-Hzo" secondAttribute="bottom" constant="33" id="wN9-fB-Bya"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="gQi-IO-lmF" id="t7o-fH-u1w"/>
+                        <outlet property="visualSlider" destination="R6D-RA-Yxp" id="RVl-Xx-CD0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139.13043478260872" y="132.58928571428572"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Paint" width="800" height="545"/>
+    </resources>
+</document>
